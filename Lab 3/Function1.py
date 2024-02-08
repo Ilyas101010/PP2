@@ -3,12 +3,10 @@ def grams_to_ounces(grams):
     ounces = grams / 28.3495231
     return ounces
 
-print(grams_to_ounces(100))
-
 #2
 def Celcius(fahr):
     return ((5/9)*(fahr - 32))
-print(Celcius(-40))
+
 
 #3
 def solve(numheads, numlegs):
@@ -16,7 +14,6 @@ def solve(numheads, numlegs):
     chickens = numheads - rabbits
     print(rabbits, " rabbits and ", chickens, " chickens. ")
 
-solve(35, 94)
 
 #4
 def filter_prime(nums):
@@ -33,8 +30,6 @@ def filter_prime(nums):
             if(d == True): res.append(x)  
     return res
 
-print(filter_prime([1, 2, 5, 7, 8, 8, 9, 10]))
-
 #5
 def permut(step, a):
     if(step == len(a)):
@@ -45,24 +40,19 @@ def permut(step, a):
 
         permut(step + 1, a1)
 
-permut(0, "abc")
-
 #6
 def rev_words(string):
     s = list(string.split(' '))
     s.reverse()
     res = ' '.join(s)
     return res
-print(rev_words("We are ready"))
 
 #7
-# def has_33(arr):
-#     for i in range(1, len(arr)-1):
-#         if(arr[i-1] == arr[i] == 3 or arr[i] == arr[i+1] == 3):
-#             return True
-#     return False
-
-# print(has_33([1, 3, 1, 7, 3]))
+def has_33(arr):
+    for i in range(1, len(arr)-1):
+        if(arr[i-1] == arr[i] == 3 or arr[i] == arr[i+1] == 3):
+            return True
+    return False
 
 #8
 
@@ -83,8 +73,51 @@ def spy_game(arr):
     else:
         return False
 
-print (spy_game([1,2,4,0,0,7,5]))
-print (spy_game([1,0,2,4,0,5,7])) 
-print (spy_game([1,7,2,0,4,5,0]))
+# 9
+import math
+def volume_sphere(R):
+    return 4/3*math.pi*R**3
+
+# 10
+def unique(abc):
+    new_abc = []
+    for x in abc:
+        if(x not in new_abc):
+            new_abc.append(x)
+    return new_abc
+
+# 11
+def is_palindrome(string):
+    for i in range(0, len(string)//2):
+        if(string[i] != string[len(string)-1-i]):
+            return False
+    return True
+
+# 12
+def histogram(a):
+    for x in a:
+        print ("*"*x)
+
+# 13
 
 
+def guess_game(cnt, num):
+    print ("Hello! What is your name?")
+    name = input()
+    txt = "Well, {}, I am thinking of a number between 1 and 20."
+    print (txt.format(name))
+
+    x = -1
+    print("Take a guess.")
+    while(x != num):
+        x = int(input())
+        if(x < num):
+            print("Your guess is too low.")
+            cnt += 1
+        elif(x > num):
+            print ("Your guess is too high.")
+            cnt += 1
+        else: 
+            txt = "Good job, {}! You guessed my number in {} guesses!"
+            print (txt.format(name, cnt+1))
+    
