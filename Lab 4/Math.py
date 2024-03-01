@@ -1,18 +1,21 @@
-x = min(5, 10, 25)
-y = max(5, 10, 25)
-z = abs(-7.25)
-d = pow(3, 4)
-print(x, y, z, d)
-
 import math
+# 1
+a = math.radians(15)
+print (a)
 
-x = math.sqrt(64)
-x = math.ceil(1.4)
-y = math.floor(1.4)
+# 2
+h = 5
+a = 5
+b = 6
+S = 1/2*(a+b)*h
+print (S)
 
-print(x) # returns 2
-print(y) # returns 1
+# 3
+n = 4
+a = 25
+print (pow(a, 2))
 
-x = math.pi
-
-print(x)
+# 4
+h = 6.0
+a = 5.0
+print(a*h)

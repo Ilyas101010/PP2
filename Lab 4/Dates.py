@@ -1,15 +1,31 @@
+import datetime as dt
+# 1
+a = dt.date.today() - dt.timedelta(5)
+print('Current Date :',dt.date.today())
+print('5 days before Current Date :', a)
+
+# 2
+print ("Today: ", dt.date.today())
+print("Yesterday: ", dt.date.today() - dt.timedelta(1))
+print("Tomorrow: ", dt.date.today() + dt.timedelta(1))
+
+# 3
+
 import datetime
+dt = datetime.datetime.today().replace(microsecond=0)
+print()
+print(dt)
+print()
 
-x = datetime.datetime.now()
-print(x)
+# 4
+from datetime import datetime, time
 
-print(x.year)
-print(x.strftime("%A"))
+def date_diff_in_Seconds(dt2, dt1):
+    timedelta = dt2 - dt1
+    return timedelta.days * 24 * 3600 + timedelta.seconds
 
-x = datetime.datetime(2020, 5, 17)
+date1 = datetime.strptime('2015-01-01 01:00:00', '%Y-%m-%d %H:%M:%S')
 
-print(x)
+date2 = datetime.now()
 
-x = datetime.datetime(2018, 6, 1)
-
-print(x.strftime("%y"))
+print((date_diff_in_Seconds(date2, date1)))
